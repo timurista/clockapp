@@ -8,7 +8,7 @@ I created an object called Clock to store an interval reference to a timingEvent
 I also created an app.js file to create the button elements to use with the clock. I pass in a reference to the prototype methods associated with each button and link them via an event listener on creation of each object. This makes it easier to initialize new components or buttons in the clock. To deal with conflicting context switching, the methods needed to bind to "this" inside the Clock protoype methods. 
 
 ## Pervious experience with this exercise
-I have designed a pure js timer before for an online grammar quiz. The timer was designed not as an Object though, so that presented new challenges. I have worked with objects when I created a frogger game in html5 canvas and needed to instantiate multiple player and enemy objects. From this experience, I used my knowledge of javascript's prototpying features to create methods that would work in different contexts. I had to research how binding and context switching works and them implemented this knowledge to build a working clock object .
+I have designed a pure js timer before for an online grammar quiz. The timer was designed not as an Object though, so that presented new challenges. I have worked with objects when I created a frogger game in html5 canvas and needed to instantiate multiple player and enemy objects. From this experience, I used my knowledge of javascript's prototpying features to create methods that would work in different contexts. I had to research how binding and context switching works and then implemented this knowledge to build a working clock object .
 
 # Description
 
