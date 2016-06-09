@@ -57,13 +57,14 @@ This is actually evaluated as:
 
 a = b + c(d + e).print();
 ```
+Otherwise, it saves space and makes the code more readible.
+Read the discussion here: http://mislav.net/2010/05/semicolons/
+
 
 ### es6 use of string templating and arrow functions
 When possible, I used arrow functions for tests.js file and experimented with string templating, a new javascript feature. Browser compatability is still not great, so it is experimental and will not cause major problems in running the main application.
 
 
-Otherwise, it saves space and makes the code more readible.
-Read the discussion here: http://mislav.net/2010/05/semicolons/
 
 ### stlying: style simple css inside html file
 Basic styling to keep app small. CSS in the future would be moved to an actual file style.css.
