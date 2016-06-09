@@ -46,7 +46,7 @@ clock is stored in the window as a global object. The implicit availability acro
 ### tests in console
 To avoid external libraries, I wrote a custom test file which uses console to log output of tests.
 
-### styling, no semicolons
+### styling: no semicolons
 Most of the time automatic semicolon insertion in javascript works very well. Here is one case where it could break
 
 ```
@@ -61,6 +61,8 @@ a = b + c(d + e).print();
 Otherwise, it saves space and makes the code more readible.
 Read the discussion here: http://mislav.net/2010/05/semicolons/
 
+### stlying: style simple css inside html file
+Basic styling to keep app small. CSS in the future would be moved to an actual file style.css.
 
 # Instructions
 

@@ -122,5 +122,6 @@ var success = () => {
 	else console.info(`FAILS: ${errCount}`)
 } 
 setTimeout( success, 3000)
+alert("tests are finished, check console for results")
 
 

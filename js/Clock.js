@@ -1,5 +1,6 @@
 function Clock(argmap={}) {	
-	this.date = argmap['date'] || new Date(1976, 1, 0, 0, 0, 0, 0)
+	this.date = argmap['date'] || new Date(
+		1976, 1, 0, 0, 0, 0, 0)
 	this.resetDateString = this.date.toString()
 	this.timer = null
 	this.interval = argmap['interval'] || 1000
@@ -41,7 +42,10 @@ Clock.prototype.resume = function() {
 
 
 // pauses the timer
-Clock.prototype.pause = function() { clearInterval(this.timer); this.timer = null }
+Clock.prototype.pause = function() { 
+	clearInterval(this.timer) 
+	this.timer = null
+}
 
 
 // 2. Begins at 00:00:00 upon loading
