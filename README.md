@@ -67,7 +67,7 @@ Read the discussion here: http://mislav.net/2010/05/semicolons/
 1. Open clockapp.html in browser (chrome works best)
 2. click the buttons to interact with the timer
 3. tests are run automatically when the page is loaded
-4. to turn off the tests, remove the script reference in the clockapp.html file: "<script src="tests/tests.js></script>"
+4. to turn off the tests, remove the script reference in the clockapp.html file: ```<script src="tests/tests.js></script>```
 
 
 # Tests
