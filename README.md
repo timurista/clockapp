@@ -34,7 +34,7 @@ The html file has simple styling script which for more complicated project can b
 The use of ECMA6 in terms of arrow functions and string templating is restricted to the testing features of the application.
 
 ## Design choices and limitations
-* object design for clock
+### object design for clock
 object design allows for modularity, but still preserves a link to the display div in the update method.
 
 ### initialization in the app.js file
