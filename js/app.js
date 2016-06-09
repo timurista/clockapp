@@ -1,3 +1,4 @@
+// initialization controller
 var clock = null
 
 var init = function(buttons) {
@@ -17,6 +18,7 @@ var init = function(buttons) {
 
 	// 3 - 6. Supports: start, pause, resume, and a reset button
 	buttons.forEach(function(button) {
+		
 		name = button.name
 		click = button.click
 		var btn = document.createElement("button")
@@ -27,7 +29,7 @@ var init = function(buttons) {
 		// bind context for prototype method to current clock object
 		btn.addEventListener("click", click.bind(clock))
 
-		// special binding for start function
+		// special binding for start function can be removed
 		if (name === 'Start') btn.addEventListener("click", 
 			() => alert('The clock has started'))
 
