@@ -37,16 +37,16 @@ The use of ECMA6 in terms of arrow functions and string templating is restricted
 * object design for clock
 object design allows for modularity, but still preserves a link to the display div in the update method.
 
-* initialization in the app.js file
+### initialization in the app.js file
 buttons are populated inside the div at runtime, they are not hardcoded in the html file. The mechanism for adding them allows for adding multiple buttons more easily.
 
-* global reference to clock
+### global reference to clock
 clock is stored in the window as a global object. The implicit availability across the application via enclosures, makes this clock easy to test. The limitations are potential conflicts with other clock objects in the future. Possible overriding the reference.
 
-* tests in console
+### tests in console
 To avoid external libraries, I wrote a custom test file which uses console to log output of tests.
 
-* styling, no semicolons
+### styling, no semicolons
 Most of the time automatic semicolon insertion in javascript works very well. Here is one case where it could break
 
 ```
