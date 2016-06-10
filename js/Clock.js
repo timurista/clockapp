@@ -25,6 +25,7 @@ Clock.prototype.getFormattedTime = function() {
 
 // updates display of the time on the clock
 Clock.prototype.update = function() {
+	// TODO: consider decoupling display from update function
 	if (typeof this.$display != 'undefined') 
 		this.$display.innerHTML = this.getFormattedTime()
 	this.date.setSeconds(this.date.getSeconds() + this.addSecs)

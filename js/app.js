@@ -1,43 +1,53 @@
 // initialization controller
+var debugging = true
 var clock = null
 
+var startAlert = function() {
+	if (debugging) alert('The clock has started')
+}
+
+
+// creates the elements from the array passed in
+
 var init = function(buttons) {
+
+
+	// configure clock
+
 	var $display = document.getElementById('display')
 	var $buttons = document.getElementById('buttons')
 	
-	// creates the elements from the array passed in
 	var argmap = {
 		'display': $display,
 		'date': new Date(1976, 1, 0, 0, 0, 0, 0),
 		'interval': 1000,
 		'addSecs': 1,
 	}
-	
-	// setting global clock for debugging
-	clock = new Clock(argmap)
+
+	clock = new Clock(argmap) // setting global clock for debugging
+
+
+	// configure buttons
 
 	// 3 - 6. Supports: start, pause, resume, and a reset button
-	buttons.forEach(function(button) {
-		
-		name = button.name
-		click = button.click
+
+	buttons.forEach( function(button) {
+
 		var btn = document.createElement("button")
-		var textNode = document.createTextNode(name)
-		btn.setAttribute("id", name)
-		btn.appendChild(textNode)
+		btn.textContent = button.name		
+		btn.setAttribute("id", button.name)
 
-		// bind context for prototype method to current clock object
-		btn.addEventListener("click", click.bind(clock))
-
-		// special binding for start function can be removed
-		if (name === 'Start') btn.addEventListener("click", 
-			() => alert('The clock has started'))
+		button.click.forEach( function(click) {
+			// bind context for prototype method 
+			// to current clock object
+			btn.addEventListener("click", 
+				click.bind(clock))			
+		})
 
 		$buttons.appendChild(btn)
 	})
-
-	clock.start()
 	
+	clock.start()
 }
 
 
@@ -46,9 +56,21 @@ var init = function(buttons) {
 // allows you to easily update in the future
 // click must take reference to prototype methods of Clock object
 init([
-	{ 'name': 'Start', 'click': Clock.prototype.start },
-	{ 'name': 'Pause', 'click': Clock.prototype.pause },
-	{ 'name': 'Resume', 'click': Clock.prototype.resume },
-	{ 'name': 'Reset', 'click': Clock.prototype.reset },
-	])
+	{ 
+		'name': 'Start', 
+		'click': [Clock.prototype.start, startAlert] 
+	},
+	{ 
+		'name': 'Pause', 
+		'click': [Clock.prototype.pause] 
+	},
+	{ 
+		'name': 'Resume', 
+		'click': [Clock.prototype.resume] 
+	},
+	{ 
+		'name': 'Reset', 
+		'click': [Clock.prototype.reset] 
+	},
+])
 

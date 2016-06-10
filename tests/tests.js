@@ -28,7 +28,6 @@ testgroup( () => {
 		'date': new Date(2001, 1, 1, 0, 0, 0, 0),
 	})
 
-
 	var re = /\d\d:\d\d:\d\d/
 
 	// sanity check matching regex not always work
@@ -102,10 +101,10 @@ testgroup( () => {
 	console.log('eClock start time', eClock.getFormattedTime())
 
 
+
 	eClock.addSecs = -1
 	setTimeout(() => {
-		
-
+		// TODO: manage callbacks with promises	
 		assert(
 			eClock.date.getSeconds() > startTime, 
 			"after countdown, seconds did not decrease"
@@ -120,8 +119,8 @@ testgroup( () => {
 var success = () => { 
 	if (errCount<1) console.log("SUCCESS: all tests pass!")
 	else console.info(`FAILS: ${errCount}`)
+	alert("tests are finished, check console for results")
 } 
 setTimeout( success, 3000)
-alert("tests are finished, check console for results")
 
 
